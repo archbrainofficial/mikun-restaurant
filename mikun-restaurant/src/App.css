@@ -1,0 +1,13 @@
+/* App-specific styles for Mikun Restaurant */
+body {
+  margin: 0;
+  background: #111111;
+}
+
+.mk-btn {
+  font-family: inherit;
+}
+
+.mk-card {
+  background: rgba(255,255,255,0.04);
+}

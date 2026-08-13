@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "cd mikun-restaurant && npm run dev",
+    "build": "cd mikun-restaurant && npm run build",
+    "preview": "cd mikun-restaurant && npm run preview"
+  },
+  "dependencies": {
+    "lucide-react": "^1.31.0"
+  }
+}
