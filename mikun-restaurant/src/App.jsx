@@ -25,9 +25,9 @@ const CATEGORIES = [
 
 const SEED_MENU = [
   { id: "m1", name: "Mikun Signature Jollof Rice", category: "rice", price: 3500, unit: "1 plate", stock: 40, tag: "Best seller", spicy: 1, desc: "Smoky party-style jollof rice, Mikun's house recipe, served with fried plantain.", image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=500&q=80" },
-  { id: "m2", name: "Fried Rice & Grilled Chicken", category: "rice", price: 4200, unit: "1 plate", stock: 30, tag: "", spicy: 0, desc: "Vegetable fried rice paired with a quarter grilled chicken.", image: "https://images.unsplash.com/photo-1603133872878-6967b68270c6?auto=format&fit=crop&w=500&q=80" },
+  { id: "m2", name: "Fried Rice & Grilled Chicken", category: "rice", price: 4200, unit: "1 plate", stock: 30, tag: "", spicy: 0, desc: "Vegetable fried rice paired with a quarter grilled chicken.", image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=500&q=80" },
   { id: "m3", name: "Pounded Yam & Egusi Soup", category: "swallow", price: 3800, unit: "1 portion", stock: 25, tag: "", spicy: 1, desc: "Smooth pounded yam with rich egusi soup loaded with assorted meat.", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80" },
-  { id: "m4", name: "Amala & Ewedu with Gbegiri", category: "swallow", price: 3200, unit: "1 portion", stock: 20, tag: "Good Vibe pick", spicy: 1, desc: "Classic Ekiti-style amala combo with ewedu and gbegiri soup.", image: "https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=500&q=80" },
+  { id: "m4", name: "Amala & Ewedu with Gbegiri", category: "swallow", price: 3200, unit: "1 portion", stock: 20, tag: "Good Vibe pick", spicy: 1, desc: "Classic Ekiti-style amala combo with ewedu and gbegiri soup.", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80" },
   { id: "m5", name: "Semo & Ogbono Soup", category: "swallow", price: 3200, unit: "1 portion", stock: 22, tag: "", spicy: 1, desc: "Smooth semovita with draw-rich ogbono soup and assorted meat.", image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=500&q=80" },
   { id: "m6", name: "Grilled Turkey (Full)", category: "grill", price: 7500, unit: "full", stock: 15, tag: "", spicy: 1, desc: "Well-seasoned grilled turkey, chargrilled to order.", image: "https://images.unsplash.com/photo-1598515214211-89d3e73ae83b?auto=format&fit=crop&w=500&q=80" },
   { id: "m7", name: "Suya Platter", category: "grill", price: 4500, unit: "platter", stock: 18, tag: "Popular", spicy: 2, desc: "Spicy skewered beef suya with onions and yaji spice.", image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=500&q=80" },
@@ -148,7 +148,10 @@ export default function MikunRestaurant() {
       if (m && Array.isArray(m) && m.length) {
         const migrated = m.map((item) => {
           const seed = SEED_MENU.find((s) => s.id === item.id || s.name === item.name);
-          return { ...item, image: item.image || seed?.image || "" };
+          const currentImg = item.image || seed?.image || "";
+          const brokenKeys = ["1603133872878-6967b68270c6", "1606787366850-de6330128bfc"];
+          const isBroken = brokenKeys.some(key => currentImg.includes(key));
+          return { ...item, image: isBroken ? (seed?.image || "") : currentImg };
         });
         setMenu(migrated);
         await saveShared("mikun-menu", migrated);
@@ -613,23 +616,36 @@ function ProductCard({ item, addToCart, onOpen }) {
   }
   return (
     <div className="mk-card mk-product-card" style={styles.productCard}>
-      <button style={styles.productImg} onClick={onOpen}>
+      <button className="mk-product-img" style={styles.productImg} onClick={onOpen}>
         {item.image || cat?.icon ? (
-          <img src={item.image || cat?.icon} alt={item.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          <img 
+            src={item.image || cat?.icon} 
+            alt={item.name} 
+            style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80";
+            }}
+          />
         ) : (
           <span style={{ fontSize: 42 }}>🍽️</span>
         )}
-        {item.tag && <span style={styles.productTag}>{item.tag}</span>}
-        {lowStock && <span style={styles.lowStockTag}>Almost gone</span>}
+        {item.tag && <span className="mk-product-tag" style={styles.productTag}>{item.tag}</span>}
+        {lowStock && <span className="mk-low-stock-tag" style={styles.lowStockTag}>Almost gone</span>}
       </button>
-      <div style={styles.productBody}>
-        <button style={styles.productName} onClick={onOpen}>{item.name}</button>
-        <span style={styles.productUnit}>
-          {item.unit}{item.spicy > 0 && <> · {Array.from({ length: item.spicy }).map((_, i) => <Flame key={i} className="mk-flame" size={11} color="#E2542B" style={{ verticalAlign: -1, animationDelay: (i * .15) + "s" }} />)}</>}
-        </span>
+      <div className="mk-product-body" style={styles.productBody}>
+        <div className="mk-product-text-wrap" style={{ display: "flex", flexDirection: "column", gap: 4, alignItems: "flex-start", textAlign: "left" }}>
+          <button className="mk-product-name" style={styles.productName} onClick={onOpen}>{item.name}</button>
+          <span className="mk-product-unit" style={styles.productUnit}>
+            {item.unit}{item.spicy > 0 && <> · {Array.from({ length: item.spicy }).map((_, i) => <Flame key={i} className="mk-flame" size={11} color="#E2542B" style={{ verticalAlign: -1, animationDelay: (i * .15) + "s" }} />)}</>}
+          </span>
+        </div>
         <div className="mk-product-footer" style={styles.productFooter}>
-          <span style={styles.productPrice}>{money(item.price)}</span>
-          <button className={"mk-btn mk-add-btn" + (justAdded ? " mk-add-flash" : "")} style={styles.addBtn} onClick={handleAdd}><Plus size={15} /> Add</button>
+          <span className="mk-product-price" style={styles.productPrice}>{money(item.price)}</span>
+          <button className={"mk-btn mk-add-btn" + (justAdded ? " mk-add-flash" : "")} style={styles.addBtn} onClick={handleAdd}>
+            <Plus size={15} />
+            <span className="mk-add-btn-text"> Add</span>
+          </button>
         </div>
       </div>
     </div>
@@ -646,7 +662,15 @@ function ItemPage({ item, addToCart, setView }) {
       <div className="mk-product-detail" style={styles.productDetail}>
         <div style={styles.productDetailImg}>
           {item.image || cat?.icon ? (
-            <img src={item.image || cat?.icon} alt={item.name} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 12 }} />
+            <img 
+              src={item.image || cat?.icon} 
+              alt={item.name} 
+              style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 12 }} 
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80";
+              }}
+            />
           ) : (
             <span style={{ fontSize: 90 }}>🍽️</span>
           )}
@@ -687,7 +711,15 @@ function CartPage({ cart, updateQty, removeFromCart, cartTotal, setView, current
               <div key={c.id} className="mk-cart-row" style={styles.cartRow}>
                 <div className="mk-cart-row-img" style={styles.cartRowImg}>
                   {c.image ? (
-                    <img src={c.image} alt={c.name} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 8 }} />
+                    <img 
+                      src={c.image} 
+                      alt={c.name} 
+                      style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 8 }} 
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80";
+                      }}
+                    />
                   ) : (
                     "🍽️"
                   )}
@@ -1255,22 +1287,128 @@ function GlobalStyle() {
           min-height: 200px !important;
         }
 
-        /* Product grid -> 2 Columns */
+        /* Product grid -> List view on mobile */
         .mk-product-grid {
-          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
-          gap: 12px !important;
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 0 !important;
         }
         .mk-product-card {
-          border-radius: 10px !important;
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center !important;
+          background: transparent !important;
+          border: none !important;
+          border-bottom: 1px solid var(--border) !important;
+          border-radius: 0 !important;
+          padding: 12px 0 !important;
+          margin: 0 !important;
+          box-shadow: none !important;
+          transform: none !important;
         }
-        .mk-product-card button span {
-          font-size: 32px !important;
+        .mk-product-card:hover {
+          background: transparent !important;
+          transform: none !important;
+          box-shadow: none !important;
+          border-color: var(--border) !important;
         }
-        .mk-product-card button {
-          height: 100px !important;
+        .mk-product-card:hover .mk-product-footer button {
+          background: var(--green) !important;
+          color: var(--on-accent) !important;
         }
-        .mk-product-card .mk-product-footer {
-          margin-top: 6px !important;
+        .mk-product-card:hover button {
+          color: var(--ink) !important;
+        }
+        .mk-product-card:hover span {
+          color: var(--text-secondary) !important;
+        }
+        .mk-product-card:hover .mk-product-price {
+          color: var(--ink) !important;
+        }
+        .mk-product-img {
+          width: 72px !important;
+          height: 72px !important;
+          flex-shrink: 0 !important;
+          border-radius: 8px !important;
+          margin-right: 16px !important;
+          background: var(--surface) !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          border: none !important;
+          padding: 0 !important;
+        }
+        .mk-product-img img {
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: cover !important;
+          border-radius: 8px !important;
+        }
+        .mk-product-img span {
+          font-size: 28px !important;
+        }
+        .mk-product-body {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          flex: 1 !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          gap: 12px !important;
+        }
+        .mk-product-text-wrap {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 4px !important;
+          align-items: flex-start !important;
+          text-align: left !important;
+        }
+        .mk-product-name {
+          font-size: 15px !important;
+          font-weight: 600 !important;
+          color: var(--ink) !important;
+          line-height: 1.3 !important;
+        }
+        .mk-product-unit {
+          font-size: 12px !important;
+          color: var(--text-secondary) !important;
+        }
+        .mk-product-footer {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-end !important;
+          gap: 6px !important;
+          margin-top: 0 !important;
+        }
+        .mk-product-price {
+          font-size: 14px !important;
+          font-weight: 500 !important;
+          color: var(--ink) !important;
+        }
+        .mk-product-price::before {
+          content: "From " !important;
+          font-size: 13px !important;
+          font-weight: normal !important;
+          color: var(--text-secondary) !important;
+        }
+        .mk-add-btn {
+          width: 32px !important;
+          height: 32px !important;
+          border-radius: 50% !important;
+          padding: 0 !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          background: var(--green) !important;
+          color: var(--on-accent) !important;
+        }
+        .mk-add-btn-text {
+          display: none !important;
+        }
+        .mk-product-card .mk-product-tag,
+        .mk-product-card .mk-low-stock-tag {
+          display: none !important;
         }
         
         /* Swipeable Sticky Category Filter on Shop Page */
@@ -1481,15 +1619,6 @@ function GlobalStyle() {
 
       /* Extra styling for very small mobiles */
       @media (max-width: 400px) {
-        .mk-product-footer {
-          flex-direction: column !important;
-          align-items: stretch !important;
-          gap: 6px !important;
-        }
-        .mk-add-btn {
-          width: 100% !important;
-          justify-content: center !important;
-        }
         .mk-stat-grid {
           grid-template-columns: 1fr !important;
         }
