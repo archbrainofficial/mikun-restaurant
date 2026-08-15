@@ -40,6 +40,28 @@ const SEED_MENU = [
   { id: "m14", name: "Zobo (Chilled)", category: "drinks", price: 1000, unit: "500ml", stock: 35, tag: "", spicy: 0, desc: "House zobo drink infused with ginger and pineapple.", image: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=500&q=80" },
   { id: "m15", name: "Puff Puff Ice Cream Bowl", category: "desserts", price: 2500, unit: "bowl", stock: 12, tag: "", spicy: 0, desc: "Warm puff puff bites served with vanilla ice cream.", image: "https://images.unsplash.com/photo-1508737027454-e6454ef45afd?auto=format&fit=crop&w=500&q=80" },
   { id: "m16", name: "Chef's Special Combo Plate", category: "specials", price: 6000, unit: "1 plate", stock: 10, tag: "Limited", spicy: 1, desc: "Jollof rice, grilled chicken, moi moi and dodo — today's featured combo.", image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80" },
+  { id: "m17", name: "Semo with Beef", category: "swallow", price: 1500, unit: "1 portion", stock: 30, tag: "", spicy: 0, desc: "Smooth semovita served with beef in rich local soup.", image: "/food-images/semo%20with%20beef.jpg" },
+  { id: "m18", name: "Eba with Beef", category: "swallow", price: 1500, unit: "1 portion", stock: 30, tag: "", spicy: 0, desc: "Traditional eba served with beef in rich local soup.", image: "/food-images/eba%20wity%20beef.jpg" },
+  { id: "m19", name: "Small Plate of Jollof & Fried Rice with Beef", category: "rice", price: 1700, unit: "small plate", stock: 30, tag: "", spicy: 0, desc: "A half-and-half combo of jollof and fried rice served with seasoned beef.", image: "/food-images/SMALL%20PLATE%20OF%20JOLLOF%26FRIED%20RICE%20WITH%20BEEF.jpg" },
+  { id: "m20", name: "Spag with Beef", category: "rice", price: 1700, unit: "1 portion", stock: 30, tag: "", spicy: 1, desc: "Stir-fried spaghetti loaded with Nigerian spices and served with beef.", image: "/food-images/SPAG%20WITH%20BEEF.jpg" },
+  { id: "m21", name: "Pounded Yam per Plate (per one 500)", category: "swallow", price: 1700, unit: "1 plate", stock: 30, tag: "", spicy: 0, desc: "Fluffy pounded yam served per plate, priced with beef.", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80" },
+  { id: "m22", name: "Small Plate of Asun Jollof with Beef", category: "rice", price: 1900, unit: "small plate", stock: 25, tag: "", spicy: 2, desc: "Spicy Asun-flavoured jollof rice served with beef.", image: "/food-images/SMALL%20PLATE%20OF%20ASUN%20JOLLOF%20WITH%20BEEF.jpeg" },
+  { id: "m23", name: "Rice and Beans Small Plate with Beef", category: "rice", price: 1900, unit: "small plate", stock: 25, tag: "", spicy: 0, desc: "Traditional rice and beans combo served with beef.", image: "/food-images/RICE%20AND%20BEANS%20SMALL%20PLATE%20WITH%20BEEF.jpg" },
+  { id: "m24", name: "Village Rice with Beef Small Plate", category: "rice", price: 1900, unit: "small plate", stock: 25, tag: "", spicy: 1, desc: "Native local rice cooked with palm oil and locust beans, served with beef.", image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=500&q=80" },
+  { id: "m25", name: "Big Plate of Jollof & Fried Rice with Beef", category: "rice", price: 2200, unit: "large plate", stock: 30, tag: "", spicy: 0, desc: "A generous serving of jollof and fried rice combo with seasoned beef.", image: "/food-images/SMALL%20PLATE%20OF%20JOLLOF%26FRIED%20RICE%20WITH%20BEEF.jpg" },
+  { id: "m26", name: "Big Plate of Asun Jollof with Beef", category: "rice", price: 2600, unit: "large plate", stock: 25, tag: "", spicy: 2, desc: "A large portion of spicy Asun-style jollof rice served with beef.", image: "/food-images/SMALL%20PLATE%20OF%20ASUN%20JOLLOF%20WITH%20BEEF.jpeg" },
+  { id: "m27", name: "Rice and Beans with Beef Big Plate", category: "rice", price: 2500, unit: "large plate", stock: 25, tag: "", spicy: 0, desc: "A large portion of rice and beans combo served with beef.", image: "/food-images/RICE%20AND%20BEANS%20SMALL%20PLATE%20WITH%20BEEF.jpg" },
+  { id: "m28", name: "Village Rice with Beef Big Plate", category: "rice", price: 2600, unit: "large plate", stock: 25, tag: "", spicy: 1, desc: "A large portion of native local rice cooked with palm oil and locust beans, served with beef.", image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=500&q=80" },
+  { id: "m29", name: "Yam and Egg", category: "specials", price: 3000, unit: "1 portion", stock: 15, tag: "", spicy: 0, desc: "Boiled or fried yam paired with delicious scrambled or fried egg sauce.", image: "/food-images/YAM%20AND%20EGG.jpg" },
+  { id: "m30", name: "Small Chicken", category: "grill", price: 2000, unit: "1 piece", stock: 40, tag: "", spicy: 0, desc: "Well-seasoned fried or grilled chicken (small portion).", image: "/food-images/small%20chicken.jpg" },
+  { id: "m31", name: "Big Chicken", category: "grill", price: 2500, unit: "1 piece", stock: 40, tag: "", spicy: 0, desc: "Juicy, well-seasoned fried or grilled chicken (large portion).", image: "/food-images/Big%20chicken.jpg" },
+  { id: "m32", name: "Turkey", category: "grill", price: 3000, unit: "1 piece", stock: 35, tag: "", spicy: 0, desc: "Tender and flavorful fried or grilled turkey piece.", image: "/food-images/Turkey.jpg" },
+  { id: "m33", name: "Fish", category: "grill", price: 1500, unit: "1 piece", stock: 35, tag: "", spicy: 0, desc: "Fried or grilled fish seasoned with local spices.", image: "/food-images/Fish.jpg" },
+  { id: "m34", name: "Egg", category: "grill", price: 300, unit: "1 piece", stock: 50, tag: "", spicy: 0, desc: "Boiled egg or fried egg as an extra protein option.", image: "/food-images/Egg.jpg" },
+  { id: "m35", name: "Table Water", category: "drinks", price: 250, unit: "1 bottle", stock: 100, tag: "", spicy: 0, desc: "Chilled bottled table water.", image: "/food-images/Table%20water.jpg" },
+  { id: "m36", name: "Big Coke", category: "drinks", price: 500, unit: "1 bottle", stock: 60, tag: "", spicy: 0, desc: "Chilled Coca-Cola (large bottle).", image: "/food-images/Big%20coke.jpg" },
+  { id: "m37", name: "Big Fanta", category: "drinks", price: 500, unit: "1 bottle", stock: 60, tag: "", spicy: 0, desc: "Chilled Fanta orange drink (large bottle).", image: "/food-images/Big%20Fanta.jpg" },
+  { id: "m38", name: "Big Sprite", category: "drinks", price: 500, unit: "1 bottle", stock: 60, tag: "", spicy: 0, desc: "Chilled Sprite lemon-lime drink (large bottle).", image: "/food-images/Big%20Sprite.jpg" },
 ];
 
 const REVIEWS = [
@@ -57,14 +79,14 @@ async function loadShared(key, fallback) {
   catch { return fallback; }
 }
 async function saveShared(key, value) {
-  try { await window.storage.set(key, JSON.stringify(value), true); } catch {}
+  try { await window.storage.set(key, JSON.stringify(value), true); } catch { }
 }
 async function loadPersonal(key, fallback) {
   try { const r = await window.storage.get(key, false); return r ? JSON.parse(r.value) : fallback; }
   catch { return fallback; }
 }
 async function savePersonal(key, value) {
-  try { await window.storage.set(key, JSON.stringify(value), false); } catch {}
+  try { await window.storage.set(key, JSON.stringify(value), false); } catch { }
 }
 
 export default function MikunRestaurant() {
@@ -146,9 +168,16 @@ export default function MikunRestaurant() {
     (async () => {
       const m = await loadShared("mikun-menu", null);
       if (m && Array.isArray(m) && m.length) {
-        const migrated = m.map((item) => {
+        // Merge any new seed items that aren't in the loaded menu yet
+        const existingNames = new Set(m.map((item) => item.name.toLowerCase()));
+        const newItems = SEED_MENU.filter((seedItem) => !existingNames.has(seedItem.name.toLowerCase()));
+
+        const migrated = [...m, ...newItems].map((item) => {
           const seed = SEED_MENU.find((s) => s.id === item.id || s.name === item.name);
-          const currentImg = item.image || seed?.image || "";
+          let currentImg = item.image || seed?.image || "";
+          if (seed && seed.image && seed.image.startsWith("/food-images/")) {
+            currentImg = seed.image;
+          }
           const brokenKeys = ["1603133872878-6967b68270c6", "1606787366850-de6330128bfc"];
           const isBroken = brokenKeys.some(key => currentImg.includes(key));
           return { ...item, image: isBroken ? (seed?.image || "") : currentImg };
@@ -306,7 +335,7 @@ export default function MikunRestaurant() {
         {view === "login" && <AuthPage mode="login" onSubmit={login} error={authError} setView={setView} showPw={showPw} setShowPw={setShowPw} />}
         {view === "register" && <AuthPage mode="register" onSubmit={register} error={authError} setView={setView} showPw={showPw} setShowPw={setShowPw} />}
         {view === "account" && currentUser && (
-          <AccountPage user={currentUser} myOrders={myOrders} logout={logout} setView={setView} whatsappOrderLink={whatsappOrderLink} />
+          <AccountPage user={currentUser} myOrders={myOrders} logout={logout} setView={setView} whatsappOrderLink={whatsappOrderLink} updateOrderStatus={updateOrderStatus} />
         )}
         {view === "admin" && adminMode && (
           <AdminDashboard adminView={adminView} setAdminView={setAdminView}
@@ -324,20 +353,20 @@ export default function MikunRestaurant() {
 }
 
 /* ============================== NAV ============================== */
-function Nav({ view, setView, menuOpen, setMenuOpen, cartCount, currentUser, query, setQuery, cartPop, setActiveCategory, theme, setTheme }) {
+function Nav({ view: _view, setView, menuOpen, setMenuOpen, cartCount, currentUser, query, setQuery, cartPop, setActiveCategory, theme, setTheme }) {
   return (
     <header style={styles.header}>
       <div style={styles.headerTop}>
         <div className="mk-header-top-inner" style={styles.headerTopInner}>
           <span><MapPin size={13} style={{ marginRight: 4, verticalAlign: -2 }} />Ado-Ekiti, Ekiti State</span>
-          <span><Phone size={13} style={{ marginRight: 4, verticalAlign: -2 }} />0800-MIKUN-EAT</span>
+          <span><Phone size={13} style={{ marginRight: 4, verticalAlign: -2 }} />0906 867 8820</span>
+          <span><Clock size={13} style={{ marginRight: 4, verticalAlign: -2 }} />Mon - Sat: 9am - 10pm</span>
         </div>
       </div>
       <div style={styles.headerMain}>
         <div className="mk-header-main-inner" style={styles.headerMainInner}>
           <div style={styles.logoContainer} onClick={() => setView("home")}>
-            <span style={styles.logoMark}>MIKUN</span>
-            <span style={styles.logoWord}>GOOD FOOD · GOOD VIBE</span>
+            <img src="/mikun%20logo.png" alt="MIKUN" style={{ height: 52, objectFit: "contain" }} />
           </div>
           <div className="mk-search-wrap" style={styles.searchWrap}>
             <Search size={17} color="#8A7C6E" />
@@ -370,6 +399,10 @@ function Nav({ view, setView, menuOpen, setMenuOpen, cartCount, currentUser, que
           {CATEGORIES.slice(0, 5).map((c) => (
             <button key={c.id} className="mk-nav-link" style={styles.subNavLink} onClick={() => { setActiveCategory(c.id); setView("shop"); }}>{c.name}</button>
           ))}
+          <button className="mk-nav-link" style={{ ...styles.subNavLink, marginLeft: "auto", color: "var(--jollof)", fontWeight: 600 }} onClick={() => setView(currentUser ? "account" : "login")}>
+            <ClipboardList size={13} style={{ marginRight: 4, verticalAlign: -2 }} />
+            Order History
+          </button>
         </div>
       </div>
 
@@ -379,10 +412,10 @@ function Nav({ view, setView, menuOpen, setMenuOpen, cartCount, currentUser, que
           <div style={styles.mobileDrawerBackdrop} onClick={() => setMenuOpen(false)} />
           <div style={styles.mobileDrawerContent}>
             <div style={styles.mobileDrawerHeader}>
-              <span style={styles.logoMark}>MIKUN</span>
+              <img src="/mikun%20logo.png" alt="MIKUN" style={{ height: 44, objectFit: "contain" }} />
               <button style={styles.menuCloseBtn} onClick={() => setMenuOpen(false)}><X size={24} /></button>
             </div>
-            
+
             {/* Mobile Search */}
             <div style={styles.mobileSearchWrap}>
               <Search size={18} color="#8A7C6E" />
@@ -410,11 +443,15 @@ function Nav({ view, setView, menuOpen, setMenuOpen, cartCount, currentUser, que
               ))}
               <div style={styles.mobileNavDivider} />
               <button style={styles.mobileNavLink} onClick={() => { setView(currentUser ? "account" : "login"); setMenuOpen(false); }}>
+                <ClipboardList size={16} style={{ marginRight: 8, verticalAlign: -2 }} />
+                Order History
+              </button>
+              <button style={styles.mobileNavLink} onClick={() => { setView(currentUser ? "account" : "login"); setMenuOpen(false); }}>
                 <User size={16} style={{ marginRight: 8, verticalAlign: -2 }} />
                 {currentUser ? `Account (${currentUser.name.split(" ")[0]})` : "Sign In / Register"}
               </button>
             </nav>
-            
+
             <div style={styles.mobileDrawerFooter}>
               <div style={{ fontSize: 13, color: "var(--text-secondary)", marginBottom: 4, display: "flex", alignItems: "center" }}><MapPin size={12} style={{ marginRight: 4 }} /> Ado-Ekiti, Ekiti State</div>
               <div style={{ fontSize: 13, color: "var(--text-secondary)", display: "flex", alignItems: "center" }}><Phone size={12} style={{ marginRight: 4 }} /> 0800-MIKUN-EAT</div>
@@ -440,7 +477,7 @@ function HomePage({ setView, setActiveCategory, menu, addToCart, setSelectedItem
             <h1 className="mk-hero-title" style={styles.heroTitle}>Good food.<br /><span style={{ color: "var(--green)" }}>Good vibe.</span></h1>
             <p style={styles.heroSub}>
               From smoky jollof rice to pepper-soaked suya — order online for pickup, delivery,
-              or straight to WhatsApp, the same way you would at our Ado-Ekiti spot.
+              or straight to WhatsApp. Open Monday to Saturday 9am - 10pm.
             </p>
             <div className="mk-hero-btns" style={styles.heroBtns}>
               <button className="mk-btn" style={{ ...styles.btnPrimary, background: "var(--green)" }} onClick={() => { setActiveCategory("all"); setView("shop"); }}>
@@ -618,10 +655,10 @@ function ProductCard({ item, addToCart, onOpen }) {
     <div className="mk-card mk-product-card" style={styles.productCard}>
       <button className="mk-product-img" style={styles.productImg} onClick={onOpen}>
         {item.image || cat?.icon ? (
-          <img 
-            src={item.image || cat?.icon} 
-            alt={item.name} 
-            style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+          <img
+            src={item.image || cat?.icon}
+            alt={item.name}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80";
@@ -662,10 +699,10 @@ function ItemPage({ item, addToCart, setView }) {
       <div className="mk-product-detail" style={styles.productDetail}>
         <div style={styles.productDetailImg}>
           {item.image || cat?.icon ? (
-            <img 
-              src={item.image || cat?.icon} 
-              alt={item.name} 
-              style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 12 }} 
+            <img
+              src={item.image || cat?.icon}
+              alt={item.name}
+              style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 12 }}
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80";
@@ -711,10 +748,10 @@ function CartPage({ cart, updateQty, removeFromCart, cartTotal, setView, current
               <div key={c.id} className="mk-cart-row" style={styles.cartRow}>
                 <div className="mk-cart-row-img" style={styles.cartRowImg}>
                   {c.image ? (
-                    <img 
-                      src={c.image} 
-                      alt={c.name} 
-                      style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 8 }} 
+                    <img
+                      src={c.image}
+                      alt={c.name}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 8 }}
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80";
@@ -869,7 +906,7 @@ function AuthPage({ mode, onSubmit, error, setView, showPw, setShowPw, adminHint
 }
 
 /* ============================== ACCOUNT ============================== */
-function AccountPage({ user, myOrders, logout, setView, whatsappOrderLink }) {
+function AccountPage({ user, myOrders, logout, setView, whatsappOrderLink, updateOrderStatus }) {
   const statusColor = { Pending: "#E8A33D", Preparing: "#378ADD", "Out for delivery": "#7F77DD", Delivered: "#3E8E5B", Cancelled: "#E24B4A" };
   return (
     <div style={styles.pageNarrow}>
@@ -898,11 +935,16 @@ function AccountPage({ user, myOrders, logout, setView, whatsappOrderLink }) {
                 </div>
                 <div className="mk-order-row-price" style={{ fontWeight: 700 }}>{money(o.total)}</div>
                 <span className="mk-order-row-status" style={{ ...styles.statusPill, background: (statusColor[o.status] || "#888") + "22", color: statusColor[o.status] || "#888" }}>{o.status}</span>
-                {o.payment === "whatsapp" ? (
-                  <a className="mk-order-row-actions" href={whatsappOrderLink(o)} target="_blank" rel="noreferrer" style={styles.iconBtnSm}><MessageCircle size={14} /></a>
-                ) : (
-                  <div className="mk-order-row-actions" />
-                )}
+                <div className="mk-order-row-actions" style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                  {o.payment === "whatsapp" && (
+                    <a href={whatsappOrderLink(o)} target="_blank" rel="noreferrer" style={styles.iconBtnSm}><MessageCircle size={14} /></a>
+                  )}
+                  {o.status === "Pending" && (
+                    <button className="mk-btn" style={{ background: "rgba(226,75,74,0.15)", color: "#E24B4A", border: "1px solid rgba(226,75,74,0.3)", borderRadius: 6, padding: "4px 8px", fontSize: 11, fontWeight: 600 }} onClick={() => updateOrderStatus(o.id, "Cancelled")}>
+                      Cancel
+                    </button>
+                  )}
+                </div>
               </div>
             ))
           )}
@@ -921,7 +963,10 @@ function AdminDashboard({ adminView, setAdminView, menu, orders, saveMenuItem, d
   return (
     <div className="mk-admin-wrap" style={styles.adminWrap}>
       <aside className="mk-admin-sidebar" style={styles.adminSidebar}>
-        <div className="mk-admin-logo" style={styles.adminLogo}><span style={styles.logoMark}>MIKUN</span><span style={{ fontSize: 11, color: "#E8C99B" }}>ADMIN</span></div>
+        <div className="mk-admin-logo" style={{ ...styles.adminLogo, display: "flex", alignItems: "center", gap: 8, flexDirection: "row" }}>
+          <img src="/mikun%20logo.png" alt="MIKUN" style={{ height: 36, objectFit: "contain" }} />
+          <span style={{ fontSize: 11, color: "#E8C99B", fontWeight: 700 }}>ADMIN</span>
+        </div>
         <button className="mk-admin-nav-item" style={{ ...styles.adminNavItem, ...(adminView === "dashboard" ? styles.adminNavActive : {}) }} onClick={() => setAdminView("dashboard")}><BarChart3 size={17} /> Dashboard</button>
         <button className="mk-admin-nav-item" style={{ ...styles.adminNavItem, ...(adminView === "products" ? styles.adminNavActive : {}) }} onClick={() => setAdminView("products")}><LayoutGrid size={17} /> Menu items</button>
         <button className="mk-admin-nav-item" style={{ ...styles.adminNavItem, ...(adminView === "orders" ? styles.adminNavActive : {}) }} onClick={() => setAdminView("orders")}><ClipboardList size={17} /> Orders</button>
@@ -986,8 +1031,14 @@ function OrderTable({ orders, updateOrderStatus, compact }) {
                   <button className="mk-btn" style={{ ...styles.btnPrimary, background: "var(--green)", color: "var(--on-accent)", padding: "5px 10px", fontSize: 11, borderRadius: 6, fontWeight: 700 }} onClick={() => updateOrderStatus(o.id, "Preparing")}>
                     Approve Order
                   </button>
+                ) : o.status === "Preparing" || o.status === "Out for delivery" ? (
+                  <button className="mk-btn" style={{ ...styles.btnPrimary, background: "var(--green)", color: "var(--on-accent)", padding: "5px 10px", fontSize: 11, borderRadius: 6, fontWeight: 700 }} onClick={() => updateOrderStatus(o.id, "Delivered")}>
+                    Delivered
+                  </button>
+                ) : o.status === "Delivered" ? (
+                  <span style={{ fontSize: 12, color: "#3E8E5B", fontWeight: 600 }}>Delivered</span>
                 ) : (
-                  <span style={{ fontSize: 12, color: "var(--text-secondary)" }}>Approved</span>
+                  <span style={{ fontSize: 12, color: "var(--text-secondary)" }}>{o.status}</span>
                 )}
               </td>
               {!compact && (<td><select className="mk-input" style={{ ...styles.select, padding: "4px 8px", fontSize: 12 }} value={o.status} onChange={(e) => updateOrderStatus(o.id, e.target.value)}>{statuses.map((s) => <option key={s} value={s}>{s}</option>)}</select></td>)}
@@ -1066,9 +1117,9 @@ function Footer({ setView }) {
   return (
     <footer style={styles.footer}>
       <div className="mk-footer-inner" style={styles.footerInner}>
-        <div>
-          <div style={styles.logoMark}>MIKUN</div>
-          <p style={{ color: "var(--ink-soft)", fontSize: 13, maxWidth: 260, marginTop: 8 }}>Good food, good vibe — Ado-Ekiti's home for real Nigerian flavour, cooked fresh and ordered online.</p>
+        <div style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start" }}>
+          <img src="/mikun%20logo.png" alt="MIKUN" style={{ height: 50, objectFit: "contain" }} />
+          <p style={{ color: "var(--ink-soft)", fontSize: 13, maxWidth: 260, margin: 0 }}>Good food, good vibe — Ado-Ekiti's home for real Nigerian flavour, cooked fresh and ordered online.</p>
         </div>
         <div>
           <h5 style={styles.footerHead}>Order</h5>
@@ -1079,10 +1130,11 @@ function Footer({ setView }) {
         <div>
           <h5 style={styles.footerHead}>Visit us</h5>
           <p style={styles.footerText}>Mikun Good Food Good Vibe, Ado-Ekiti, Ekiti State</p>
+          <p style={{ ...styles.footerText, marginTop: 4 }}><strong>Hours:</strong> Mon - Sat: 9am - 10pm</p>
         </div>
         <div>
           <h5 style={styles.footerHead}>Contact</h5>
-          <p style={styles.footerText}>0800-MIKUN-EAT</p>
+          <p style={styles.footerText}>0906 867 8820</p>
           <p style={styles.footerText}>hello@mikungoodfood.com</p>
         </div>
       </div>
@@ -1153,15 +1205,25 @@ function GlobalStyle() {
         background: var(--green) !important;
         border-color: var(--green-deep) !important;
       }
-      .mk-product-card:hover .mk-product-footer button {
-        background: var(--charcoal) !important;
-        color: #fff !important;
-      }
       .mk-product-card:hover button {
         color: var(--on-accent) !important;
       }
       .mk-product-card:hover span {
         color: var(--on-accent) !important;
+      }
+      .mk-product-card:hover .mk-product-footer .mk-add-btn {
+        background: var(--charcoal) !important;
+        color: #fff !important;
+      }
+      .mk-product-card:hover .mk-product-footer .mk-add-btn .mk-add-btn-text {
+        color: #fff !important;
+      }
+      .mk-add-btn:hover {
+        background: var(--charcoal) !important;
+        color: #fff !important;
+      }
+      .mk-add-btn:hover .mk-add-btn-text {
+        color: #fff !important;
       }
 
       .mk-cat-card { transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease; }
@@ -1655,7 +1717,7 @@ const cssVars = {
 const styles = {
   app: { ...cssVars, fontFamily: "var(--font-body)", background: "var(--cream)", color: "var(--ink)", minHeight: "100%", lineHeight: 1.5 },
   toast: { position: "fixed", top: 16, right: 16, zIndex: 999, background: "var(--panel)", color: "var(--ink)", padding: "10px 18px", borderRadius: 8, fontSize: 14, boxShadow: "0 6px 20px rgba(0,0,0,.3)" },
-  
+
   mobileDrawer: { position: "fixed", top: 0, right: 0, bottom: 0, left: 0, zIndex: 100, display: "flex", justifyContent: "flex-end" },
   mobileDrawerBackdrop: { position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)" },
   mobileDrawerContent: { position: "relative", width: "min(85%, 320px)", height: "100%", background: "var(--panel)", borderLeft: "1px solid var(--border)", display: "flex", flexDirection: "column", padding: 20, zIndex: 101, animation: "mk-slide-left 0.3s cubic-bezier(0.16, 1, 0.3, 1) both" },
@@ -1767,7 +1829,7 @@ const styles = {
   qtyBtn: { width: 30, height: 30, borderRadius: 7, border: "1px solid var(--border)", background: "var(--surface)", display: "flex", alignItems: "center", justifyContent: "center" },
   qtyVal: { minWidth: 20, textAlign: "center", fontWeight: 700 },
   catTagSmall: { fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--ember)", fontWeight: 600 },
- 
+
   cartLayout: { display: "grid", gridTemplateColumns: "1fr 300px", gap: 26, alignItems: "start" },
   cartList: { display: "flex", flexDirection: "column", gap: 10 },
   cartRow: { display: "flex", alignItems: "center", gap: 14, background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 10, padding: "12px 14px" },
