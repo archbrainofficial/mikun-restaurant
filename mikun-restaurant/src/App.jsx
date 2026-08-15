@@ -356,11 +356,20 @@ export default function MikunRestaurant() {
 function Nav({ view: _view, setView, menuOpen, setMenuOpen, cartCount, currentUser, query, setQuery, cartPop, setActiveCategory, theme, setTheme }) {
   return (
     <header style={styles.header}>
-      <div style={styles.headerTop}>
+      <div style={styles.headerTop} className="mk-header-top">
         <div className="mk-header-top-inner" style={styles.headerTopInner}>
-          <span><MapPin size={13} style={{ marginRight: 4, verticalAlign: -2 }} />Ado-Ekiti, Ekiti State</span>
-          <span><Phone size={13} style={{ marginRight: 4, verticalAlign: -2 }} />0906 867 8820</span>
-          <span><Clock size={13} style={{ marginRight: 4, verticalAlign: -2 }} />Mon - Sat: 9am - 10pm</span>
+          <div className="mk-header-top-track">
+            <div className="mk-header-top-group">
+              <span><MapPin size={13} style={{ marginRight: 4, verticalAlign: -2 }} />Ado-Ekiti, Ekiti State</span>
+              <span><Phone size={13} style={{ marginRight: 4, verticalAlign: -2 }} />0906 867 8820</span>
+              <span><Clock size={13} style={{ marginRight: 4, verticalAlign: -2 }} />Mon - Sat: 9am - 10pm</span>
+            </div>
+            <div className="mk-header-top-group" aria-hidden="true">
+              <span><MapPin size={13} style={{ marginRight: 4, verticalAlign: -2 }} />Ado-Ekiti, Ekiti State</span>
+              <span><Phone size={13} style={{ marginRight: 4, verticalAlign: -2 }} />0906 867 8820</span>
+              <span><Clock size={13} style={{ marginRight: 4, verticalAlign: -2 }} />Mon - Sat: 9am - 10pm</span>
+            </div>
+          </div>
         </div>
       </div>
       <div style={styles.headerMain}>
@@ -1252,6 +1261,23 @@ function GlobalStyle() {
       .mk-admin-nav { transition: background .2s ease, padding-left .2s ease; }
       .mk-admin-nav:hover { padding-left: 16px; }
 
+      .mk-header-top {
+        overflow: hidden;
+      }
+      .mk-header-top-track {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+      .mk-header-top-group {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .mk-header-top-group[aria-hidden="true"] {
+        display: none;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         .mk-fade-up, .mk-stagger > *, .mk-view-enter, .mk-toast, .mk-badge-pop, .mk-flame { animation: none !important; }
         .mk-card, .mk-cat-card, .mk-btn { transition: none !important; }
@@ -1296,10 +1322,30 @@ function GlobalStyle() {
           color: var(--ink);
         }
         
-        /* Hide Top bar or make it wrap nicely */
+        /* Ticker marquee for top bar on mobile */
         header .mk-header-top-inner {
           padding: 6px 16px !important;
-          justify-content: space-between !important;
+          display: block !important;
+          overflow: hidden !important;
+        }
+        .mk-header-top-track {
+          width: max-content !important;
+          display: flex !important;
+          animation: mk-marquee 20s linear infinite !important;
+          justify-content: flex-start !important;
+        }
+        .mk-header-top-group {
+          display: flex !important;
+          gap: 40px !important;
+          padding-right: 40px !important;
+          white-space: nowrap !important;
+        }
+        .mk-header-top-group[aria-hidden="true"] {
+          display: flex !important;
+        }
+        @keyframes mk-marquee {
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); }
         }
 
         /* Hide Desktop SubNav Categories scroll */
